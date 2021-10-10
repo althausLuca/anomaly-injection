@@ -1,4 +1,6 @@
 # Anomaly injection for Time Series  
+Support multiple injections of amplitude shoft, distortion , growth change and extrem values of a single data column containing numerical values.
+
 
 ## Prerequisites
 To run the programm you need Python with pandas and matplotlib installed
@@ -11,33 +13,44 @@ To run the programm you need Python with pandas and matplotlib installed
 ## Execution
 ```bash
     $ cd my_injcetion
-    $ python terminal.py [arguments]
+    $ sudo apt install python-dev
+    $ sudo apt install python3-pip
+    $ pip install pandas
+    $ pip install matplotlib
+    $ python3 terminal.py [arguments]
 ```
 
-## data Arguments
+### data Arguments
 -data  yourdatapath 
+
+
 ### optional arguments 
 -datacol  default: 0 has to be an index \
 -seperator default: ","
 
-### repeated Arguments
+The supported data files are in csv style the first line is disgarded automatically if intcontains string values.
+
+## Anomalies
 -type [amplitude_shift 
 distortion ,
 growth_change ,
-extreme  ]
+extreme]
 
 
-####folloed by optional arguments
+### folloed by optional arguments
 -lenght int anomalyLength\
--factor int anomalyfactor\
+-factor int anomalyfactor\ 
 -n int  anomalyRepetitions
 
-When the first data row only contains numerical arguments There is assumed to be no header
-###plotting and saving arguments:
+The default lenght is 10 and number of repertitions 1. The factor depends 
+When the first data row only contains numerical arguments there is assumed to be no header.
+### plotting and saving arguments:
 -plot\
 -legendoff\
 -save filename  
 
+
+All the arguments try to match if only the beginning is given i.e., **-t** instead of **-type** or **a** insteaf of **amplitude_shift**
 ### Examples:
 
 
