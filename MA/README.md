@@ -37,21 +37,25 @@ growth_change ,
 extreme]
 
 
-### folloed by optional arguments
+### Followed by optional arguments
 -lenght int anomalyLength\
 -factor int anomalyfactor\ 
 -n int  anomalyRepetitions
 
 The default lenght is 10 and number of repertitions 1. The factor depends 
 When the first data row only contains numerical arguments there is assumed to be no header.
-### plotting and saving arguments:
+### Plotting and saving arguments:
 -plot\
 -legendoff\
 -save filename  
+
+The file will be saved into the Data/generated folder unless specified otherwise
 
 
 All the arguments try to match if only the beginning is given i.e., **-t** instead of **-type** or **a** insteaf of **amplitude_shift**
 ### Examples:
 
+$python3 terminal.py -data Data/stock10k.data -plot -col 2 -type  amplitude_shift -type distortion -length 30 -factor 6 -n 6
 
-$python .\terminal.py -d .\Data\stock10k.data -col 2 -type a -n 12 -l 100 -sa out -t d -n 3  -l 200 -plot -t g -n 4
+$ python3 terminal.py -data Data/stock10k.data -plot -col 2 -t a -t d -l 30 -f 6 -n 6
+
