@@ -35,17 +35,18 @@ extreme]
 
 
 ### Followed by optional numerical arguments
--lenght\
--factor\
--n\
--index 
+-lenght int\
+-factor numeric\
+-n int\
+-index int 
 
 The default lenght is 10 and number of repetitions n is 1. The factor depends on the anomayly and the index is random.
 
 ### Plotting and saving arguments:
 -plot\
--legendoff\
--save filename
+-whitoutlegend\
+-save filename\
+-anomalydetails
 
 The file will be saved into the Data/generated folder unless specified otherwise
 
@@ -53,15 +54,15 @@ The file will be saved into the Data/generated folder unless specified otherwise
 All the arguments try to match if only the beginning is given i.e., **-t** instead of **-type** or **a** insteaf of **amplitude_shift**
 ### Examples:
 ```bash
-$ python3 run.py -data Data/stock10k.data -plot -col 2 -type  amplitude_shift -type distortion -length 30 -factor 6 -n 6
+$ python3 run.py -data Data/stock10k.data -plot -col 2 -type  amplitude_shift -type distortion -length 30 -factor 6 -n 6 -anomalydetails
 
 $ python3 run.py -data Data/stock10k.data -plot -col 2 -t a -t d -l 30 -f 6 -n 6
 
-$ python3 run.py -data Data/stock10k.data  -col 2 -t a -l 100  -save output -t a -t e -f 6 -p
+$ python3 run.py -data Data/stock10k.data  -col 2 -t a -l 100  -save output -t a -t e -f 6 -p 
 ```
 
 ### Additional experimental run
-The file runc.py has an optional argument -cont where one can continue working on the same anomalies and delete and anomalie by index
+The file runc.py has an optional argument -cont where one can continue working on the same anomalies and -delete to delete an anomalie by index
 
 #### Example
 ```bash
