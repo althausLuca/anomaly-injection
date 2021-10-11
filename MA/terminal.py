@@ -13,6 +13,7 @@ parser.add_argument('-datacol',"-col" , nargs=1, default=[0] ,type=int )
 parser.add_argument('-save',  nargs=1, type=str , default=False )
 parser.add_argument('-plot', action='store_true')
 parser.add_argument('-whitoutlegend', action='store_false')
+parser.add_argument('-anomalydetails', action='store_true')
 
 #anomalies
 parser.add_argument("-type" ,nargs=1, type=str , action="extend")
@@ -32,7 +33,7 @@ for i in data.iloc[0]:
         header = 0
 
 data = pd.read_csv(args.data[0], sep=args.sep[0] , names=list(range(data.shape[1])) , header = header)
-print(data)
+print(data.head(4))
 
 injector = Anomalygenerator(np.array(data[int(args.datacol[0])]))
 
@@ -69,6 +70,20 @@ for anom in anomalies:
         injector.add_distortion(length=1,factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
     else:
         print(f'anomaly type {type[0]} not recognized')
+
+
+
+if(args.anomalydetails):
+    print()
+    for key, value in injector.anomaly_infos.items():
+    	value = value.copy()
+    	value["index_range"] = ( value["index_range"][0] , value["index_range"][-1])
+    	try:
+    		value.pop("std_range") 
+    	except:
+    		pass
+    	print(key,value , "\n")
+
 
 if(args.plot):
     injector.plot(legend=args.whitoutlegend)

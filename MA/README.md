@@ -25,7 +25,7 @@ To run the programm you need Python with pandas and matplotlib installed
 
 
 ### optional arguments 
--datacol  default: 0 has to be an index \
+-datacol  default: 0 ,has to be an index \
 -seperator default: ","
 
 The supported data files are in csv style the first line is disgarded automatically if intcontains string values.
@@ -43,7 +43,7 @@ extreme]
 -n int  anomalyRepetitions
 
 The default lenght is 10 and number of repertitions 1. The factor depends 
-When the first data row only contains numerical arguments there is assumed to be no header.
+
 ### Plotting and saving arguments:
 -plot\
 -legendoff\
