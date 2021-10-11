@@ -9,7 +9,7 @@ To run the programm you need Python with pandas and matplotlib installed
 - Clone this repository.
 - Execute:
 ```bash
-    $ cd my_injcetion
+    $ cd Injection
     $ sudo apt install python-dev
     $ sudo apt install python3-pip
     $ pip install pandas
