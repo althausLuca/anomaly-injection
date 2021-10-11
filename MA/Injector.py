@@ -97,7 +97,7 @@ class Anomalygenerator:
         else:
             index_range = np.array(range(starting_index, starting_index+length))
             self.anomaly_indexes[index_range] += 1
-            print("range" , index_range)
+
         return index_range
 
     def get_injected_series(self , leave_out_set = []):
@@ -131,13 +131,15 @@ class Anomalygenerator:
                 self.add_distortion(length = len(values["index_range"]))
 
 
-    def __add_anomaly(self,number_of_ranges,starting_index,length, anomaly_function_dependent_of_index_range):
+    def __add_anomaly(self,number_of_ranges,starting_index,length, anomaly_function_dependent_of_index_range , type = None):
         for i in range(number_of_ranges):
             self.anomaly_count += 1
             index_range = self._set_anomaly_range(starting_index, length)
             new_anomaly, new_info = anomaly_function_dependent_of_index_range(index_range)
             self.anomaly_infos[self.anomaly_count] = new_info
             self.individual_anomalies[self.anomaly_count] = new_anomaly
+            if type is not None:
+                self.anomaly_infos[self.anomaly_count]["type"] = type
 
     def add_growth(self, length=10, factor=1.2, starting_index=None,  number_of_ranges=1 , id = 0 ,directions=[1,-1]):
         self.__add_anomaly(number_of_ranges,starting_index,length,
@@ -153,6 +155,13 @@ class Anomalygenerator:
         self.__add_anomaly(number_of_ranges, starting_index, length,
                             lambda index_range:
                             inject_distortion(self.original_data, index_range, factor=factor))
+
+    def add_extreme_point(self, length=1, factor=8, starting_index=None, number_of_ranges=1):
+        length = 1
+        self.__add_anomaly(number_of_ranges, starting_index, length,
+                            lambda index_range:
+                            inject_amplitude_shift(self.original_data, index_range, factor=factor) , type =  "extreme")
+
 
     def plot(self ,legend= True):
         data= self.get_injected_series()

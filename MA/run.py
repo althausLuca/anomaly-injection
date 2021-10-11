@@ -36,7 +36,7 @@ for i in data.iloc[0]:
 data = pd.read_csv(args.data[0], sep=args.sep[0] , names=list(range(data.shape[1])) , header = header)
 print(data.head(4))
 
-injector = Anomalygenerator(np.array(data[int(args.datacol[0])]))
+injector = Anomalygenerator(np.array(data[int(args.datacol[0])],dtype=np.float64))
 
 
 anomalies = []
@@ -68,7 +68,7 @@ for anom in anomalies:
     elif type[0] == "g":
         injector.add_growth(starting_index = int(anom.get("index",0)) or None, length=int(anom.get("length",10)),factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
     elif type[0] == "e":
-        injector.add_distortion(starting_index = int(anom.get("index",0)) or None, length=1,factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
+        injector.add_extreme_point(starting_index = int(anom.get("index",0)) or None, length=1,factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
     else:
         print(f'anomaly type {type[0]} not recognized')
 
@@ -77,13 +77,13 @@ for anom in anomalies:
 if(args.anomalydetails):
     print()
     for key, value in injector.anomaly_infos.items():
-    	value = value.copy()
-    	value["index_range"] = ( value["index_range"][0] , value["index_range"][-1])
-    	try:
-    		value.pop("std_range") 
-    	except:
-    		pass
-    	print(key,value , "\n")
+        value = value.copy()
+        value["index_range"] = ( value["index_range"][0] , value["index_range"][-1])
+        try:
+            value.pop("std_range")
+        except:
+            pass
+        print(key,value , "\n")
 
 
 if(args.plot):
