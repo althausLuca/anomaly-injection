@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from injection.my_injection.Injector import inject_amplitude_shift, Anomalygenerator, inject_growth_change
+from Injector import inject_amplitude_shift, Anomalygenerator, inject_growth_change
 
 ##vadetis
 df =pd.read_csv('Data/vadetis_injections/SAG_groth_change.csv', sep=';', header=0)
