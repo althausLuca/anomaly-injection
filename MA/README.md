@@ -37,10 +37,11 @@ growth_change ,
 extreme]
 
 
-### Followed by optional arguments
--lenght int anomalyLength\
--factor int anomalyfactor\ 
--n int  anomalyRepetitions
+### Followed by optional numerical arguments
+-lenght anomalyLength\
+-factor  anomalyfactor\ 
+-n   anomalyRepetitions\
+-index 
 
 The default lenght is 10 and number of repertitions 1. The factor depends 
 

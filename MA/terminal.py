@@ -21,6 +21,7 @@ parser.add_argument("-length" ,nargs=1, type=int , action="extend")
 parser.add_argument("-factor", nargs=1, type=int,  action="extend")
 parser.add_argument("-number_of_iterations" ,nargs=1, type=int,  action="extend")
 parser.add_argument("-direction", nargs=1, type=str,  action="extend",required=False)
+parser.add_argument("-index", nargs=1, type=int,  action="extend",required=False)
 
 args = parser.parse_args()
 
@@ -61,13 +62,13 @@ for anom in anomalies:
     type = anom["type"]
     if type[0] == "a":
         #length=10, factor=8, starting_index=None,  number_of_ranges=1 , std_range=(-10, 10),directions=[1, -1]
-        injector.add_amplitude_shift(length=int(anom.get("length",10)),factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
+        injector.add_amplitude_shift(starting_index = int(anom.get("index",0)) or None, length=int(anom.get("length",10)),factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
     elif type[0] == "d":
-        injector.add_distortion(length=int(anom.get("length",10)),factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
+        injector.add_distortion(starting_index = int(anom.get("index",0)) or None, length=int(anom.get("length",10)),factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
     elif type[0] == "g":
-        injector.add_growth(length=int(anom.get("length",10)),factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
+        injector.add_growth(starting_index = int(anom.get("index",0)) or None, length=int(anom.get("length",10)),factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
     elif type[0] == "e":
-        injector.add_distortion(length=1,factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
+        injector.add_distortion(starting_index = int(anom.get("index",0)) or None, length=1,factor=int(anom.get("factor",8)),number_of_ranges =int(anom.get("number_of_iterations",1)))
     else:
         print(f'anomaly type {type[0]} not recognized')
 
