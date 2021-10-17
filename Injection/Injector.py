@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import json
+from Parameter_Parerser import get_parameters_from_file
 
 def inject_growth_change(data, index_range, factor=8, timedifferences=None, directions=[1, -1]):
     data = np.array(data, dtype=np.float64)
@@ -30,47 +31,6 @@ def inject_distortion(data, index_range, factor=8, timedifferences=None):
     data[index_range_extended[1::]] += (data[index_range_extended[1::]] - data[index_range_extended[:-1:]]) * factor
     return data, {"type" : "distortion" , "factor": int(factor), "index_range": [int(index) for index in index_range]}
 
-
-# def single_anomaly_dictionary(data, single_anomyl_dict):
-#     anomaly_type = single_anomyl_dict.pop("anomaly_type")
-#
-#     if anomaly_type == "amplitude_shift":
-#         return inject_amplitude_shift(data, **single_anomyl_dict)
-#
-#     elif anomaly_type == "distortion":
-#         return inject_disortion(data, **single_anomyl_dict)
-#
-#     elif anomaly_type == "growth_change":
-#         return inject_growth_change(data, **single_anomyl_dict)
-#
-#     else:
-#         print("no valid anomaly type recognized, used: amplitude_shift, distortion or growth_change")
-
-
-# def inject(data, anomaly_dict):
-#     """
-#
-#     :param data: a data vector
-#     :param anomaly_dict:e.g  {"name1" : { "anomaly_type" : "distortion" , "factor" : 8 } , name2 { ...}
-#     :return: new data vector with all the inserted anomalies , list of all the anomalies
-#     """
-#     # check if a single anomaly is given
-#     anomaly_type = anomaly_dict.pop("anomaly_type", None)
-#
-#     if anomaly_type is not None:
-#         d, i = single_anomaly_dictionary(data, anomaly_dict)
-#         return d, [i]
-#
-#     anom_infos = []
-#     anomaly_data = data.copy()
-#     for anomaly in anomaly_dict.keys():
-#         single_anomaly_data, anomaly_info = single_anomaly_dictionary(data, anomaly_dict[anomaly])
-#         anom_infos.append(anomaly_info)
-#         anomaly_data += single_anomaly_data - data
-#
-#     return anomaly_data, anom_infos
-
-
 def get_possible_indexes(anomaly_class_vector, length = 10, distance = 20, type=1 ):
     for i in np.arange(1000):
         candidate = np.random.randint(12, len(anomaly_class_vector) - length)
@@ -82,17 +42,18 @@ def get_possible_indexes(anomaly_class_vector, length = 10, distance = 20, type=
     print("anomaly density seems already really high in this dataset")
 
 class Anomalygenerator:
-    def __init__(self, data):
+    def __init__(self, data , parameter_file = "Parameters"):
         self.original_data = data
         self.data = data.copy()
         self.anomaly_indexes = np.zeros(len(data))
         self.anomaly_infos = {}
         self.anomaly_count = 0
         self.individual_anomalies = {}
+        self.parameters = get_parameters_from_file(parameter_file)
 
     def _set_anomaly_range(self,starting_index, length  ):
         if starting_index is None:
-            index_range ,self.anomaly_indexes =  get_possible_indexes( self.anomaly_indexes , length)
+            index_range ,self.anomaly_indexes =  get_possible_indexes( self.anomaly_indexes , length ,distance =  self.parameters["general"]["min_space_between_anomalies"] )
         else:
             index_range = np.array(range(starting_index, starting_index+length))
             self.anomaly_indexes[index_range] += 1
@@ -116,22 +77,50 @@ class Anomalygenerator:
             if type is not None:
                 self.anomaly_infos[self.anomaly_count]["type"] = type
 
-    def add_growth(self, length=10, factor=1.2, starting_index=None,  number_of_ranges=1 ,directions=[1,-1]):
+    def add_growth(self, length=10, factor= 8, starting_index=None,  number_of_ranges=1 ,directions=[1,-1], use_param_file = True):
+        if use_param_file:
+            params = self.parameters["growth_change"]
+            length = params["length"]
+            factor = params["factor"]
+            starting_index = params["starting_index"] if isinstance(params["starting_index"] , int) else None
+            number_of_ranges = params["number_of_injections"]
+
+
         self.__add_anomaly(number_of_ranges,starting_index,length,
                             lambda index_range :
                             inject_growth_change(self.original_data ,index_range, factor = factor ,directions=directions))
 
-    def add_amplitude_shift(self, length=10, factor=8, starting_index=None,  number_of_ranges=1 , std_range=(-10, 10),directions=[1, -1]):
+    def add_amplitude_shift(self, length=10, factor=8, starting_index=None,  number_of_ranges=1 , std_range=(-10, 10),directions=[1, -1],use_param_file = True):
+        if use_param_file:
+            params = self.parameters["amplitude_shift"]
+            length = params["length"]
+            factor = params["factor"]
+            starting_index = params["starting_index"] if isinstance(params["starting_index"], int) else None
+            number_of_ranges = params["number_of_injections"]
+
         self.__add_anomaly(number_of_ranges, starting_index, length,
                            lambda index_range:
                            inject_amplitude_shift(self.original_data ,index_range, factor = factor , stdrange= std_range,directions=directions))
 
-    def add_distortion(self, length=10, factor=8, starting_index=None, number_of_ranges=1):
+    def add_distortion(self, length=10, factor=8, starting_index=None, number_of_ranges=1,use_param_file = True):
+        if use_param_file:
+            params = self.parameters["distortion"]
+            length = params["length"]
+            factor = params["factor"]
+            starting_index = params["starting_index"] if isinstance(params["starting_index"], int) else None
+            number_of_ranges = params["number_of_injections"]
+
         self.__add_anomaly(number_of_ranges, starting_index, length,
                             lambda index_range:
                             inject_distortion(self.original_data, index_range, factor=factor))
 
-    def add_extreme_point(self, length=1, factor=8, starting_index=None, number_of_ranges=1):
+    def add_extreme_point(self, length=1, factor=8, starting_index=None, number_of_ranges=1,use_param_file = True):
+        if use_param_file:
+            params = self.parameters["extremevalue"]
+            factor = params["factor"]
+            starting_index = params["starting_index"] if isinstance(params["starting_index"], int) else None
+            number_of_ranges = params["number_of_injections"]
+
         length = 1
         self.__add_anomaly(number_of_ranges, starting_index, length,
                             lambda index_range:

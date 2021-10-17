@@ -16,7 +16,7 @@ df =df[df["ts_name"] == "SAG"]
 original = df["value"]
 data = np.array(original)
 
-data1 , _ = inject_distortion(data,[893, 894, 895, 896, 897, 898, 899, 900, 901, 902] , factor=9)
+data1 , _ = inject_distortion(data,[893, 894, 895, 896, 897, 898, 899, 900, 901, 902] , factor=9 )
 
 difference = data1 - np.array(vaditis_injvected) # 0
 assert sum(abs(difference)) < 0.000001
@@ -25,7 +25,7 @@ assert sum(abs(difference)) < 0.000001
 
 injector = Anomalygenerator(data.copy())
 
-injector.add_distortion(starting_index= injectedranges[0], length = len(injectedranges),factor=9)
+injector.add_distortion(starting_index= injectedranges[0], length = len(injectedranges),factor=9 , use_param_file = False)
 
 series = injector.get_injected_series()
 

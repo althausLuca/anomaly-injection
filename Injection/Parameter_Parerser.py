@@ -7,16 +7,15 @@ def get_parameters_from_file(filename='Parameters'):
     anomaly_dict = {}
     for line in lines:
         if line[0] == "#":
-            key = line[1:]
+            key = line[1:].lower()
             anomaly_dict[key] = {}
         else:
             words = line.split()
-            subkey = words[0]
+            subkey = words[0].lower()
             value = words[1]
             try:
                 value = int(value)
             except:
-                print(value)
                 try:
                     value = float(value)
                 except:

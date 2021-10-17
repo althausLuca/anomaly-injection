@@ -31,8 +31,8 @@ assert(sum(abs(difference)) <0.00001)
 
 injector = Anomalygenerator(data.copy())
 
-injector.add_amplitude_shift(starting_index= first_injection[0], length = len(first_injection),factor=10,std_range=(-6,6),directions=[1])
-injector.add_amplitude_shift(starting_index= second_injection[0], length = len(second_injection),factor=10,std_range=(-6,6),directions=[1])
+injector.add_amplitude_shift(starting_index= first_injection[0], length = len(first_injection),factor=10,std_range=(-6,6),directions=[1],use_param_file = False)
+injector.add_amplitude_shift(starting_index= second_injection[0], length = len(second_injection),factor=10,std_range=(-6,6),directions=[1],use_param_file = False)
 
 series = injector.get_injected_series()
 
