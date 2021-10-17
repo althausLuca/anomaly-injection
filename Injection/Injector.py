@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import json
 
-
 def inject_growth_change(data, index_range, factor=8, timedifferences=None, directions=[1, -1]):
     data = np.array(data, dtype=np.float64)
     slope = np.random.choice(directions) * factor * np.arange(len(index_range))
@@ -72,10 +71,10 @@ def inject_distortion(data, index_range, factor=8, timedifferences=None):
 #     return anomaly_data, anom_infos
 
 
-def get_possible_indexes(anomaly_class_vector, length = 10, type=1):
-    for i in np.arange(100):
+def get_possible_indexes(anomaly_class_vector, length = 10, distance = 20, type=1 ):
+    for i in np.arange(1000):
         candidate = np.random.randint(12, len(anomaly_class_vector) - length)
-        if np.sum(anomaly_class_vector[np.arange(candidate - 10, candidate + length)]) == 0:
+        if np.sum(anomaly_class_vector[np.arange(candidate - distance, candidate + length+distance)]) == 0:
             # we found a range
             index_range = np.arange(candidate, candidate+length)
             anomaly_class_vector[index_range] += type
@@ -107,30 +106,6 @@ class Anomalygenerator:
                 data += value-self.original_data
         return data
 
-    def clear(self):
-        self.__init__(self.original_data)
-
-    def delete_anomaly(self, index ):
-        self.individual_anomalies.pop(index)
-        r = self.anomaly_infos[index]["index_range"].copy()
-        self.anomaly_infos.pop(index)
-        self.anomaly_indexes[r] -= 1
-
-    def repeat_anomalies(self):
-        old_anomalies = self.anomaly_infos.copy()
-        self.clear()
-        for key, values in old_anomalies.items():
-            type = values["type"]
-
-            if type == "growth_change":
-                self.add_growth(length = len(values["index_range"]) , factor=values["factor"] )
-            if type == "amplitude_shift":
-                self.add_amplitude_shift(length = len(values["index_range"]) , factor=values["factor"] ,std_range=values["std_range"])
-
-            if type == "distortion":
-                self.add_distortion(length = len(values["index_range"]))
-
-
     def __add_anomaly(self,number_of_ranges,starting_index,length, anomaly_function_dependent_of_index_range , type = None):
         for i in range(number_of_ranges):
             self.anomaly_count += 1
@@ -141,7 +116,7 @@ class Anomalygenerator:
             if type is not None:
                 self.anomaly_infos[self.anomaly_count]["type"] = type
 
-    def add_growth(self, length=10, factor=1.2, starting_index=None,  number_of_ranges=1 , id = 0 ,directions=[1,-1]):
+    def add_growth(self, length=10, factor=1.2, starting_index=None,  number_of_ranges=1 ,directions=[1,-1]):
         self.__add_anomaly(number_of_ranges,starting_index,length,
                             lambda index_range :
                             inject_growth_change(self.original_data ,index_range, factor = factor ,directions=directions))
