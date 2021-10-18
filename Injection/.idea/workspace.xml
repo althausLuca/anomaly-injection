@@ -3,27 +3,47 @@
   <component name="ChangeListManager">
     <list default="true" id="db8cffc1-6b46-4e74-9271-1523b69f9972" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG100.csv.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG100.csva" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG100.csva.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG200.csv.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG200.csva" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG200.csva.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG700.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG700.csv.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG700.csva" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/SAG700.csva.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/stock100.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/stock100.data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/stock100.dataa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/stock100.dataa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/stock150.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/stock150.data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/stock150.dataa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/stock150.dataa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inject.py" beforeDir="false" afterPath="$PROJECT_DIR$/inject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG100.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG200.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG700.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG700.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahstock100.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahstock100.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahstock150.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahstock150.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahSAG100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahSAG100.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahSAG200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahSAG200.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahSAG700.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahSAG700.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahstock100.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahstock100.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahstock150.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ahstock150.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhSAG100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhSAG100.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhSAG200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhSAG200.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhSAG700.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhSAG700.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhstock100.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhstock100.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhstock150.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/dhstock150.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghSAG100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghSAG100.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghSAG200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghSAG200.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghSAG700.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghSAG700.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghstock100.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghstock100.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghstock150.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/ghstock150.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +59,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1zdQjas6kpwqHAqsx2A9PCI2IjJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -211,7 +239,8 @@
       <updated>1634475620390</updated>
       <workItem from="1634475623421" duration="11542000" />
       <workItem from="1634556237375" duration="3312000" />
-      <workItem from="1634561612454" duration="268000" />
+      <workItem from="1634561612454" duration="616000" />
+      <workItem from="1634591014485" duration="802000" />
     </task>
     <servers />
   </component>

@@ -3,7 +3,7 @@ Support multiple injections of amplitude shift, distortion , growth change and e
 
 
 ## Prerequisites
-- The given script works for ubuntu 18 or 20
+- The given bash script works for ubuntu 18 or 20 
 - Clone this repository.
 
 ##Build
@@ -19,32 +19,35 @@ $ python3 inject.py [arguments]
  | -data  | -type   
  | -------- | -------- | 
  | stock10k.data 2    | amplitude_shift |
- |   |distortion |  
+ | SAGandStock  2  |distortion |  
  |   | growth_change |
  |   | extreme |   
- |   | a,d,d |   
+ 
+
+
+
 
 ### Remarks
+- Data\
+The data has to be in csv style format. To specify a different separator use:
+The file will be saved into the Data/generated folder unless specified otherwise
 The data argument expects the data to be in the Data folder and the second argument
-is the column.
-The data has to be in csv style format. To specify a different seperator use:
--seperator  "sparator"
-
+is the column starting at 0.
+-sep  "separator"
+- Parameters\
 The Parameter file specifies the default anomaly parameters.
 For your own parameters modify the file or use:
--typex anomalies yourfile
+-typex anomalies your_parameter_file 
 
+- Arguments\
+All the arguments try to match if only the beginning is given i.e., **-t** instead of **-type** or **a** insteaf of **amplitude_shift**
+One can use multiple anomalies at once e.g -type a,a,d,d
 
-### Plotting and saving arguments:
+- Plot and Save commands\
 -whitoutlegend\
 -save filename\
 -anomalydetails\
 -plotoff
-
-The file will be saved into the Data/generated folder unless specified otherwise
-
-
-All the arguments try to match if only the beginning is given i.e., **-t** instead of **-type** or **a** insteaf of **amplitude_shift**
 ### Examples:
 ```bash
 $ python3 inject.py -data stock100.data 2 -type  amplitude_shift,distortion -anomalydetails
@@ -53,7 +56,7 @@ $ python3 inject.py -data stock100.data 2 -t a,d
 
 $ python3 inject.py -data stock100.data 2 -t a -save output 
 
-$ python3 inject.py -data SAGandStock  2  -save "aah" -typex a,a HalfParams -plot
+$ python3 inject.py -data SAGandStock  2  -save "aa" -typex a,a Parameters -plotoff
 
 ```
 
