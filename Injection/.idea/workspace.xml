@@ -2,32 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db8cffc1-6b46-4e74-9271-1523b69f9972" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/052_UCR_Anomaly_DISTORTEDTkeepThirdMARS_3500_4711_4809.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/053_UCR_Anomaly_DISTORTEDWalkingAceleration1_1500_2764_2995.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/054_UCR_Anomaly_DISTORTEDWalkingAceleration5_2700_5920_5979.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/SAG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SAG.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/HalfParams" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/10.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/100.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/adsada" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/adsada.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/cont" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/cont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/continiousoutput" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/continiousoutput.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/output" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/test.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/test2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/generated/test2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/inspect UCR.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Injector.py" beforeDir="false" afterPath="$PROJECT_DIR$/Injector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG100.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG100.csva" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG100.csva.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG200.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG200.csva" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG200.csva.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG700.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG700.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG700.csva" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/SAG700.csva.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/stock100.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/stock100.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/stock100.dataa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/stock100.dataa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/stock150.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/stock150.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/stock150.dataa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/stock150.dataa.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/inject.py" beforeDir="false" afterPath="$PROJECT_DIR$/inject.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,6 +211,7 @@
       <updated>1634475620390</updated>
       <workItem from="1634475623421" duration="11542000" />
       <workItem from="1634556237375" duration="3312000" />
+      <workItem from="1634561612454" duration="268000" />
     </task>
     <servers />
   </component>

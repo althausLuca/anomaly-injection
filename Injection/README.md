@@ -38,7 +38,8 @@ For your own parameters modify the file or use:
 ### Plotting and saving arguments:
 -whitoutlegend\
 -save filename\
--anomalydetails
+-anomalydetails\
+-plotoff
 
 The file will be saved into the Data/generated folder unless specified otherwise
 
@@ -51,6 +52,9 @@ $ python3 inject.py -data stock100.data 2 -type  amplitude_shift,distortion -ano
 $ python3 inject.py -data stock100.data 2 -t a,d 
 
 $ python3 inject.py -data stock100.data 2 -t a -save output 
+
+$ python3 inject.py -data SAGandStock  2  -save "aah" -typex a,a HalfParams -plot
+
 ```
 
 [comment]: <> (### Additional experimental run)
