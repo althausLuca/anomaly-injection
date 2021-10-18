@@ -11,7 +11,7 @@ parser.add_argument('-sep',nargs=1, default=[','])
 
 parser.add_argument('-save',  nargs=1, type=str , default=False )
 parser.add_argument('-plotoff', action='store_false')
-parser.add_argument('-whitoutlegend', action='store_false')
+parser.add_argument('-withoutlegend', action='store_false')
 parser.add_argument('-anomalydetails', action='store_true')
 
 #anomalies
@@ -83,7 +83,7 @@ for file in files:
 
 
     if(args.plotoff):
-        injector.plot(legend=args.whitoutlegend)
+        injector.plot(legend=args.withoutlegend)
 
     if(args.save):
         injector.save(args.save[0]+file.split("/")[-1])
