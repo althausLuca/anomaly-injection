@@ -1,1 +1,0 @@
-{"1": {"type": "amplitude_shift", "factor": 8, "index_range": [690, 691, 692, 693, 694, 695, 696, 697, 698, 699], "std_range": [-10, 10]}, "3": {"type": "growth_change", "factor": 8, "index_range": [5064, 5065, 5066, 5067, 5068, 5069, 5070, 5071, 5072, 5073]}}

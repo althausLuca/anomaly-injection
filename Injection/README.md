@@ -3,47 +3,39 @@ Support multiple injections of amplitude shift, distortion , growth change and e
 
 
 ## Prerequisites
-To run the programm you need Python with pandas and matplotlib installed
-
-- For ubuntu 18 or 20
+- The given script works for ubuntu 18 or 20
 - Clone this repository.
-- Execute:
+
+##Build
 ```bash
-    $ cd Injection
-    $ sudo apt install python-dev
-    $ sudo apt install python3-pip
-    $ pip install pandas
-    $ pip install matplotlib
-    $ python3 run.py [arguments]
+    $ sh install.sh
 ```
+##Execution
+```bash
+$ python3 inject.py [arguments]
+```
+## Arguments
 
-### Data arguments
--data  yourdatapath 
+ | -data  | -type   
+ | -------- | -------- | 
+ | stock10k.data 2    | amplitude_shift |
+ |   |distortion |  
+ |   | growth_change |
+ |   | extreme |   
+ |   | a,d,d |   
 
+### Remarks
+The data argument expects the data to be in the Data folder and the second argument
+is the column.
+The data has to be in csv style format. To specify a different seperator use:
+-seperator  "sparator"
 
-#### optional data arguments 
--col  default: 0 ,has to be an integer
--seperator default: ","
+The Parameter file specifies the default anomaly parameters.
+For your own parameters modify the file or use:
+-typex anomalies yourfile
 
-The supported data files are in csv style format. The first line is disgarded automatically if it contains string values.
-
-## Anomalies
--type [amplitude_shift,
-distortion ,
-growth_change ,
-extreme]
-
-
-### Followed by optional numerical arguments
--lenght int\
--factor numeric\
--n int\
--index int 
-
-The default lenght is 10 and number of repetitions n is 1. The factor depends on the anomayly and the index is random.
 
 ### Plotting and saving arguments:
--plot\
 -whitoutlegend\
 -save filename\
 -anomalydetails
@@ -54,39 +46,49 @@ The file will be saved into the Data/generated folder unless specified otherwise
 All the arguments try to match if only the beginning is given i.e., **-t** instead of **-type** or **a** insteaf of **amplitude_shift**
 ### Examples:
 ```bash
-$ python3 run.py -data Data/stock10k.data -plot -col 2 -type  amplitude_shift -type distortion -length 30 -factor 6 -n 6 -anomalydetails
+$ python3 inject.py -data stock100.data 2 -type  amplitude_shift,distortion -anomalydetails
 
-$ python3 run.py -data Data/stock10k.data -plot -col 2 -t a -t d -l 30 -f 6 -n 6
+$ python3 inject.py -data stock100.data 2 -t a,d 
 
-$ python3 run.py -data Data/stock10k.data  -col 2 -t a -l 100  -save output -t a -t e -f 6 -p 
+$ python3 inject.py -data stock100.data 2 -t a -save output 
 ```
 
-### Additional experimental run
-The file runc.py has an optional argument -cont where one can continue working on the same anomalies and -delete to delete an anomalie by index
+[comment]: <> (### Additional experimental run)
 
-#### Example
-```bash
-$ python3 runc.py -data Data/stock10k.data -col 2 -cont
--t a -l 10 
--t d   
--t g
--an 
+[comment]: <> (The file runc.py has an optional argument -cont where one can continue working on the same anomalies and -delete to delete an anomalie by index)
 
-1 {'type': 'amplitude_shift', 'factor': 8, 'index_range': (690, 699)} 
+[comment]: <> (#### Example)
 
-2 {'type': 'distortion', 'factor': 8, 'index_range': (11270, 11279)} 
+[comment]: <> (```bash)
 
-3 {'type': 'growth_change', 'factor': 8, 'index_range': (5064, 5073)} 
+[comment]: <> ($ python3 runc.py -data Data/stock10k.data -col 2 -cont)
 
--delete 2 
--an 
+[comment]: <> (-t a -l 10 )
 
-1 {'type': 'amplitude_shift', 'factor': 8, 'index_range': (690, 699)} 
+[comment]: <> (-t d   )
 
-3 {'type': 'growth_change', 'factor': 8, 'index_range': (5064, 5073)} 
+[comment]: <> (-t g)
 
--save continiousoutput
-exit
-```
+[comment]: <> (-an )
+
+[comment]: <> (1 {'type': 'amplitude_shift', 'factor': 8, 'index_range': &#40;690, 699&#41;} )
+
+[comment]: <> (2 {'type': 'distortion', 'factor': 8, 'index_range': &#40;11270, 11279&#41;} )
+
+[comment]: <> (3 {'type': 'growth_change', 'factor': 8, 'index_range': &#40;5064, 5073&#41;} )
+
+[comment]: <> (-delete 2 )
+
+[comment]: <> (-an )
+
+[comment]: <> (1 {'type': 'amplitude_shift', 'factor': 8, 'index_range': &#40;690, 699&#41;} )
+
+[comment]: <> (3 {'type': 'growth_change', 'factor': 8, 'index_range': &#40;5064, 5073&#41;} )
+
+[comment]: <> (-save continiousoutput)
+
+[comment]: <> (exit)
+
+[comment]: <> (```)
 
 
