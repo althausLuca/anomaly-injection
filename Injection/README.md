@@ -32,7 +32,8 @@ $ python3 inject.py [arguments]
 The data has to be in csv style format. To specify a different separator use:
 -sep  "separator"
 
-The file will be saved into the Data/generated folder unless specified otherwise.
+The file will be saved into the Data/generated folder.
+The file will be saved into the Data/generated folder.
 The data argument expects the data to be in the Data folder and the second argument
 is the column starting at 0.
 - Parameters\

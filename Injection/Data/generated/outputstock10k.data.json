@@ -1,1 +1,1 @@
-{"1": {"type": "amplitude_shift", "factor": 8, "index_range": [4248, 4249, 4250, 4251, 4252, 4253, 4254, 4255, 4256, 4257], "std_range": [-10, 10]}}
+{"1": {"type": "amplitude_shift", "factor": 8, "index_range": [3573, 3574, 3575, 3576, 3577, 3578, 3579, 3580, 3581, 3582], "std_range": [-10, 10]}, "2": {"type": "distortion", "factor": 6, "index_range": [1689, 1690, 1691, 1692, 1693, 1694, 1695, 1696, 1697, 1698]}, "3": {"type": "extreme", "factor": 8, "index_range": [1027], "std_range": [-10, 10]}}

@@ -1,5 +1,9 @@
 import argparse
 import os
+import pandas as pd
+import numpy as np
+from res.Injector import Anomalygenerator
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-data","-d" ,nargs=2, type=str ,  required=True)
