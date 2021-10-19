@@ -1,6 +1,5 @@
 import argparse
 import os
-from Data.res.Injector import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-data","-d" ,nargs=2, type=str ,  required=True)

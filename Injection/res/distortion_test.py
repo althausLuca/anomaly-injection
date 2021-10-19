@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 from Injector import  Anomalygenerator, inject_distortion
 
 ##vadetis
-df =pd.read_csv('../vadetis_injections/SAG_distortion.csv', sep=';', header=0)
+df =pd.read_csv('../Data/vadetis_injections/SAG_distortion.csv', sep=';', header=0)
 vaditis_injvected = df[df["ts_name"] == "SAG"]
 injectedranges = vaditis_injvected[vaditis_injvected["class"] == 1].index
 vaditis_injvected = vaditis_injvected["value"]
 
 ##from direct injection
-df =pd.read_csv('../SAG.csv', sep=';', header=0)
+df =pd.read_csv('../Data/SAG.csv', sep=';', header=0)
 df =df[df["ts_name"] == "SAG"]
 
 original = df["value"]

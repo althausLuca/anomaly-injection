@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import json
-from Data.res.Parameter_Parerser import get_parameters_from_file
+from res.Parameter_Parerser import get_parameters_from_file
 
 def inject_growth_change(data, index_range, factor=8, timedifferences=None, directions=[1, -1]):
     data = np.array(data, dtype=np.float64)

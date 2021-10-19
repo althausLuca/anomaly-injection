@@ -41,7 +41,7 @@ For your own parameters modify the file or use:
 -typex anomalies your_parameter_file.
 
 - Arguments\
-All the arguments try to match if only the beginning is given e.g.,  **a** insteaf of **amplitude_shift**
+All the arguments try to match if only the beginning is given e.g.,  **a** insteaf of **amplitude_shift**.
 One can use multiple anomalies at once e.g., -type a,a,d,d
 
 - Plot and Save commands\
