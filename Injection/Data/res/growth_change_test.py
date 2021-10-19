@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from Injector import inject_amplitude_shift, Anomalygenerator, inject_growth_change
 
 ##vadetis
-df =pd.read_csv('Data/vadetis_injections/SAG_groth_change.csv', sep=';', header=0)
+df =pd.read_csv('../vadetis_injections/SAG_groth_change.csv', sep=';', header=0)
 vaditis_injvected = df[df["ts_name"] == "SAG"]
 injection_range = vaditis_injvected[vaditis_injvected["class"] == 1].index
 vaditis_injvected = vaditis_injvected["value"]
@@ -12,7 +12,7 @@ vaditis_injvected = vaditis_injvected["value"]
 #injections
 
 ##from direct injection
-df =pd.read_csv('Data/SAG.csv', sep=';', header=0)
+df =pd.read_csv('../SAG.csv', sep=';', header=0)
 df =df[df["ts_name"] == "SAG"]
 
 original = df["value"]
@@ -44,8 +44,8 @@ plt.plot(np.array(vaditis_injvected),linestyle = "dashed")
 plt.show()
 
 
-data = pd.read_csv("Data/stock10k.data", sep="," , header = 0)
-data = pd.read_csv("Data/stock10k.data", sep="," , names=list(range(data.shape[1])), header = 0)
+data = pd.read_csv("../stock10k.data", sep=",", header = 0)
+data = pd.read_csv("../stock10k.data", sep=",", names=list(range(data.shape[1])), header = 0)
 
 injector = Anomalygenerator(np.array(data[2].copy()))
 

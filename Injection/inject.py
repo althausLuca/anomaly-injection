@@ -1,9 +1,6 @@
 import argparse
-import sys
-import pandas as pd
-import numpy as no
 import os
-from Injector import *
+from Data.res.Injector import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-data","-d" ,nargs=2, type=str ,  required=True)
@@ -15,8 +12,8 @@ parser.add_argument('-withoutlegend', action='store_false')
 parser.add_argument('-anomalydetails', action='store_true')
 
 #anomalies
-parser.add_argument("-type" ,nargs=1, type=str )
-parser.add_argument("-typex" ,nargs=2, type=str )
+parser.add_argument("-type","-t" ,nargs=1, type=str )
+parser.add_argument("-typex" ,"-tx",nargs=2, type=str , help = "types and parameter file")
 
 args = parser.parse_args()
 
