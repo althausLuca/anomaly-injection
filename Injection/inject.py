@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-data","-d" ,nargs=2, type=str ,  required=True)
 parser.add_argument('-sep',nargs=1, default=[','])
 
-parser.add_argument('-save',  nargs=1, type=str , default=False )
+parser.add_argument('-save',  nargs="*", type=str , default=False )
 parser.add_argument('-plotoff', action='store_false')
 parser.add_argument('-withoutlegend', action='store_false')
 parser.add_argument('-anomalydetails', action='store_true')
@@ -81,10 +81,19 @@ for file in files:
                 pass
             print(key,value , "\n")
 
+    if(injector is not None):
+        injector.repair_print()
+
 
     if(args.plotoff):
         injector.plot(legend=args.withoutlegend)
 
+    print(args.save)
     if(args.save):
+        print("aaaaaaa" , args.save)
         injector.save(args.save[0]+file.split("/")[-1])
+
+    elif (args.save == []):
+        print(file.split("/")[-1], args.save)
+        injector.save(file.split("/")[-1])
 

@@ -1,16 +1,16 @@
 # Anomaly injection for Time Series  
-Support multiple injections of amplitude shift, distortion , growth change and extrem values of a single data column containing numerical values.
+Support multiple injections of amplitude shift, distortion , growth change and extreme values of a single data column containing numerical values.
 
 
 ## Prerequisites
 - The given bash script works for ubuntu 18 or 20 
 - Clone this repository.
 
-##Build
+## Build
 ```bash
     $ sh install.sh
 ```
-##Execution
+##E xecution
 ```bash
 $ python3 inject.py [arguments]
 ```
@@ -32,7 +32,6 @@ $ python3 inject.py [arguments]
 The data has to be in csv style format. To specify a different separator use:
 -sep  "separator"
 
-The file will be saved into the Data/generated folder.
 The file will be saved into the Data/generated folder.
 The data argument expects the data to be in the Data folder and the second argument
 is the column starting at 0.

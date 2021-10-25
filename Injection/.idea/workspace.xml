@@ -2,8 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db8cffc1-6b46-4e74-9271-1523b69f9972" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Data/NABUZE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/SAGandStock/SAG.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/longanomalies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/SAG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SAG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsSAG100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsSAG100.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsSAG200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsSAG200.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsSAG700.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsSAG700.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsstock100.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsstock100.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsstock150.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/2shiftsstock150.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aaSAG100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aaSAG100.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aaSAG200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aaSAG200.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aaSAG700.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aaSAG700.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SAG100.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG100.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG200.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG700.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahSAG700.csv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahstock100.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahstock100.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahstock150.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aahstock150.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aastock100.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aastock100.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aastock150.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/aastock150.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/outputstock10k.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/generated/outputstock10k.data.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inject.py" beforeDir="false" afterPath="$PROJECT_DIR$/inject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Injector.py" beforeDir="false" afterPath="$PROJECT_DIR$/res/Injector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/amplitude_shift_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/res/amplitude_shift_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/distortion_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/res/distortion_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/growth_change_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/res/growth_change_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +79,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MA/MA" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data/SAGandStock" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/Data/res" />
       <recent name="$PROJECT_DIR$/Data/SAGandStock" />
       <recent name="$PROJECT_DIR$/Data" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Data/res" />
     </key>
   </component>
   <component name="RunManager" selected="Python.amplitude_shift_test">
@@ -203,6 +248,11 @@
       <workItem from="1634561612454" duration="616000" />
       <workItem from="1634591014485" duration="1765000" />
       <workItem from="1634630037272" duration="976000" />
+      <workItem from="1634658439216" duration="304000" />
+      <workItem from="1634664511302" duration="3278000" />
+      <workItem from="1635160992916" duration="1967000" />
+      <workItem from="1635164095462" duration="363000" />
+      <workItem from="1635172963746" duration="1106000" />
     </task>
     <servers />
   </component>

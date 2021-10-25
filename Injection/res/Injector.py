@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
 import pandas as pd
 import json
@@ -125,17 +126,40 @@ class Anomalygenerator:
                             lambda index_range:
                             inject_amplitude_shift(self.original_data, index_range, factor=factor) , type =  "extreme")
 
+    def extend(self,values, length = 1):
+        return [values[0]-i for i in range(1,length+1)] + list(values) + [ values[-1] + i for i in range(1,length+1)]
 
-    def plot(self ,legend= True):
+    def plot(self ,legend= False , multidindow =  True):
         data= self.get_injected_series()
-        plt.plot(self.original_data, linewidth=2 , label="original")
-        plt.plot(data, linestyle="" , marker = "." , label="injected")
-        for value in self.anomaly_infos.values():
-            range = value["index_range"]
-            plt.plot(range, data[range], linestyle="",  marker = '.' , label = value["type"])
-        if legend:
-            plt.legend()
+        plt.plot(self.original_data, linewidth=2 ,  marker = '.', label="original",color = "black")
+        #plt.plot(data, linestyle="" , marker = "." , label="injected")
+
+        for i, value in enumerate(sorted(self.anomaly_infos.values(), key=lambda x: x["index_range"][0])):
+            range = self.extend(value["index_range"])
+            plt.plot(range, data[range], marker='.', label=value["type"], color="red")
+        # if legend:
+        #     plt.legend()
+
+
+        anomaly_number = len(self.anomaly_infos)
+        fig , ax  = plt.subplots(ncols =anomaly_number)
+        for i,value in enumerate(sorted(self.anomaly_infos.values() ,key = lambda x : x["index_range"][0])):
+            range = self.extend(value["index_range"])
+            #plt.plot(range, data[range], linestyle="",  marker = '.' , label = value["type"])
+            #plt.xlim(self.extend(range))
+            ax[i].set_title(value["type"])
+            ax[i].plot(range, self.data[range],  marker = '.' , label = value["type"],color = "black")
+            ax[i].plot(range, data[range], marker='.', label=value["type"], color="red")
+
+
         plt.show()
+
+    def repair_print(self):
+        for i, value in enumerate(sorted(self.anomaly_infos.values(), key=lambda x: x["index_range"][0])):
+            range = value["index_range"]
+            data = self.get_injected_series()
+            print()
+            print((pd.DataFrame( { "index" : range, "oridinal": self.data[range] ,"injected" :  data[range]})).to_string(index=False))
 
 
     def save(self , name : str):
@@ -146,7 +170,7 @@ class Anomalygenerator:
         frame["class"] = self.anomaly_indexes
         frame.to_csv(name)
 
-        with open(name+".json", 'w') as fp:
+        with open(name.split(".")[0]  +".json", 'w') as fp:
             json.dump(self.anomaly_infos, fp)
 
 

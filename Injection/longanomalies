@@ -1,0 +1,26 @@
+#Amplitude_shift
+length 30
+factor 4
+starting_index random
+number_of_injections 1
+
+#Distortion
+length 30
+factor 3
+starting_index random
+number_of_injections 1
+
+#Growth_change
+length 30
+factor 1.1
+starting_index random
+number_of_injections 1
+
+#Extremevalue
+factor 4
+starting_index random
+number_of_injections 1
+
+#General
+min_space_between_anomalies 20
+

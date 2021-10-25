@@ -12,7 +12,7 @@ vaditis_injvected = vaditis_injvected["value"]
 #injections
 
 ##from direct injection
-df =pd.read_csv('../Data/SAG.csv', sep=';', header=0)
+df =pd.read_csv('../Data/NABUZE.csv', sep=';', header=0)
 df =df[df["ts_name"] == "SAG"]
 
 original = df["value"]
