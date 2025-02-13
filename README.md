@@ -8,7 +8,7 @@ Support multiple injections of amplitude shift, distortion , growth change and e
 
 ## Build
 ```bash
-    $ sh install.sh
+$ sh install.sh
 ```
 ##E xecution
 ```bash
